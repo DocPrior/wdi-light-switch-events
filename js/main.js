@@ -4,9 +4,19 @@ document.addEventListener('DOMContentLoaded', function () {
 
   var docBody = document.querySelector('body');
 
+  var lightStatus = document.querySelector('h1');
+
   lightSwitch.addEventListener('click', function() {
-    docBody.classList.remove('light');
-    docBody.classList.add('dark');
+    if (docBody.classList.contains('light')) {
+      docBody.classList.remove('light');
+      docBody.classList.add('dark');
+      lightStatus.innerText = 'Hey, who turned off the lights?';
+    }
+    else {
+      docBody.classList.remove('dark');
+      docBody.classList.add('light');
+      lightStatus.innerText ='It\'s so bright in here!';
+    }
   })
 
 });
